@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Xizmatlar</h2>
+    <table class="table table-striped table-centered mb-0">
+        <thead>
+            <tr>
+                <th>Maqola rasmi</th>  
+                <th>Sarlavha</th>  
+                <th>Qisqa tavsif</th> 
+                <th>Joylashuv</th>
+                <th>Tahrirlash</th>  
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let item of articles) { %>
+            <tr>
+                <td><img class="img-fluid rounded" src="/uploads/articles/<%= item.image %>" alt="articles"></td>
+                <td><%= item.name.ru %></td>
+                <td><%= item.title.ru %></td>
+                <td><%= item.change %></td>
+                <td class="table-action">
+                    <a href="<%=`/article/${item._id}`%>" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
+                <form method="POST" class="hidden-r" action="<%=`/article/delete/${item._id}?_method=DELETE`%>"> 
+                        <button type="submit">
+                           <i class="mdi mdi-delete"></i>
+                        </button>
+                </form>
+                </td>
+            </tr> 
+            <%}%> 
+        </tbody>
+    </table> 
+</div>

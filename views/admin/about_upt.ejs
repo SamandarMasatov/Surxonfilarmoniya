@@ -1,0 +1,21 @@
+<h1>Kompanya haqida Tahrirlash</h1>
+<div class="container mt-3 mb-3">
+    <form action="<%=`/about/${result._id}?_method=PUT`%>" method="POST" class="needs-validation" novalidate>
+       <!-- Loyiha haqida  model name -->
+       <div class="mb-3">
+        <label class="form-label"  >Kompanya haqida Uzbek tilida</label>
+        <textarea class="form-control "  rows="5" 
+            placeholder="Kompanya haqida yozing Uzbek tilida" name="nameuz" ><%= result.name.uz %></textarea>
+        
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Kompanya haqida Rus tilida</label>
+        <textarea class="form-control "  rows="5" 
+            placeholder="Kompanya haqida yozing rus tilida" name="nameru"  ><%= result.name.ru %></textarea>
+        
+    </div>
+    
+
+        <button class="btn btn-primary" type="submit">Yuklash</button>
+    </form>
+</div>

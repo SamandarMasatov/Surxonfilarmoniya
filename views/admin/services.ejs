@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Xizmatlar</h2>
+    <table class="table table-striped table-centered mb-0">
+        <thead>
+            <tr>
+                <th>Rasm</th>
+                <th>Xizmat Turi</th>  
+                <th>Qisqa tavsif</th>
+                <th>Tahrirlash</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let item of services) { %>
+            <tr>
+                <td class="table-user"> 
+                   
+                    <img src="/uploads/services/<%=item.image %>"  alt="table-user" class="me-2 rounded" />
+        
+                </td>
+                <td><%= item.name.uz %></td>
+                <td><%= item.title.uz %></td>
+                <td class="table-action">
+                    <a href="<%=`/services/${item._id}`%>" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
+                <form method="POST" class="hidden-r" action="<%=`/services/delete/${item._id}?_method=DELETE`%>">
+                        <button type="submit">
+                           <i class="mdi mdi-delete"></i>
+                        </button>
+                </form>
+                </td>
+            </tr> 
+            <%}%> 
+        </tbody>
+    </table> 
+</div>

@@ -1,0 +1,201 @@
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/images/breadcrumb/breadcrumb-1.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content">
+                    <div class="title">
+                        <h2>
+                            <% if(lang === 'uz') { %>
+                            <%= trans.servic %>
+                            <% } %>
+                        </h2>
+                        <h2>
+                            <% if(lang === 'ru') { %>
+                            <%= trans.servic %>
+                            <% } %>
+                        </h2>
+                        <h2>
+                            <% if(lang === undefined) { %>
+                            Xizmatlar
+                            <% } %> 
+                        </h2>
+                    </div>
+                    <div class="breadcrumb-menu">
+                        <ul>
+                            <li><a href="/">
+                                    <% if(lang === 'uz') { %>
+                                    <%= trans.hhome %>
+                                    <% } %> </a></li>
+                            <li><a href="/">
+                                    <% if(lang === 'ru') { %>
+                                    <%= trans.hhome %>
+                                    <% } %> </a></li>
+                            <li><a href="/">
+                                    <% if(lang === undefined) { %>
+                                    Bosh sahifa
+                                    <% } %> </a></li>
+                            <li><span class="fa fa-angle-right"></span></li>
+                            <li class="active">
+                                <% if(lang === 'uz') { %>
+                                <%= trans.servic %>
+                                <% } %>
+                                <% if(lang === 'ru') { %>
+                                <%= trans.servic %>
+                                <% } %>
+                                <% if(lang === undefined) { %>
+                                Xizmatlar
+                                <% } %>
+                                <i class="flaticon-right-arrow-1 arrow1"></i></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+
+<!--Start Service Details Area-->
+<section class="service-details-area">
+    <div class="container" itemscope itemtype="https://schema.org/WebPage">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="service-style2_top_box">
+                    <div class="sec-title">
+                        <div class="sub-title">
+                            <h5>Servis haqida</h5>
+                        </div>
+                        <h2>Biz uchun sifat<br>va mijozning manfatlari<br> birinchi o'rinda </h2>
+                    </div>
+                    <div class="text_box">
+                        <div class="top">
+
+                            <% if(lang==='uz' ){ %>
+                            <p itemprop="name"><%= result.title.uz %></p>
+                            <% } %>
+                            <% if(lang==='ru' ){ %>
+                            <p itemprop="name"><%= result.title.ru %></p>
+                            <% } %>
+                            <% if(lang===undefined ){ %>
+                            <p itemprop="name"><%= result.title.uz %></p>
+                            <% } %>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <% for (let item of result.file) { %>
+            <div class="col-xl-4 col-lg-4 col-md-4">
+                <div class="service-details-single-image">
+                    <img src="/uploads/services/<%= item %>" alt="Photo Stroy">
+                </div>
+            </div>
+            <%}%> 
+        </div>
+
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="service-details-content">
+                    <div class="top">
+                        <div class="title_holder">
+                            <div class="icon">
+                                <span class="flaticon-manufacture clr1"></span>
+                            </div>
+                            <div class="title">
+                                <% if(lang==='uz' ){ %>
+                                    <h4 itemprop="name"><%= result.name.uz %></h4>
+                                    <% } %>
+                                    <% if(lang==='ru' ){ %>
+                                        <h4 itemprop="name"><%= result.name.ru %></h4>
+                                    <% } %>
+                                    <% if(lang===undefined ){ %>
+                                        <h4 itemprop="name"><%= result.name.uz %></h4>
+                                    <% } %>
+                                
+                            </div>                  
+    </div>
+    <div class="social_link"> 
+        <ul class="social-links-style1">
+            <li>
+                <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+            </li>
+        </ul>
+    </div>
+    </div>
+    <div class="inner-content">
+        <div class="text1">
+            <% if(lang==='uz' ){ %>
+                <p itemprop="description"><%= result.description.uz %></p>
+                <% } %>
+                <% if(lang==='ru' ){ %>
+                    <p itemprop="description"><%= result.description.ru %></p>
+                <% } %>
+                <% if(lang===undefined ){ %>
+                    <p itemprop="description"><%= result.description.uz %></p>
+                <% } %>
+           
+        </div>
+    </div>
+
+    </div>
+    </div>
+    </div>
+
+    </div>
+</section>
+<!--End Service Details Area-->
+
+<!--Start Team Style1 Area-->
+<section class="team-style1-area">
+    <div class="container">
+        <div class="sec-title text-center">
+            <h2>Jamoa A'zolari</h2>
+        </div>
+        <div class="row text-right-rtl">
+
+            <!--Start Single Team Item-->
+            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1500ms">
+                <div class="single-team-item">
+                    <div class="img-holder">
+                        <div class="inner">
+                            <img src="assets/images/team/team-v1-1.jpg" alt="">
+                        </div>
+                        <div class="overlay-icon">
+                            <a href="#"><span class="flaticon-plus"></span></a>
+                        </div>
+                        <div class="social-icon">
+                            <ul>
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" class="twitter"><i class="fa fa-telegram"></i></a></li>
+                                <li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#" class="pint"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="title-holder">
+                        <h3><a href="#">Mahi Al Porahi</a></h3>
+                        <p>Qurulish muhandisi</p>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single Team Item-->
+
+        </div>
+    </div>
+</section>
+<!--End Team Style1 Area-->

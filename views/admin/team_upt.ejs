@@ -1,0 +1,75 @@
+
+<h1>Jamoa a'zolarini tahrirlash</h1>  
+<div class="container mt-3 mb-3">  
+    <form action="<%=`/team/${result._id}?_method=PUT`%>" method="POST"  class="needs-validation" novalidate>
+        <!-- Jamoa a'zosini ismi model name -->
+        <div class="mb-3"> 
+            <label class="form-label" for="validationCustom01">Jamoa a'zosini ismi Uzbek</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Jamoa a'zosini ismi yozing Uzbek tilida" value="<%= result.name.uz %>" name="nameuz" required>
+            <div class="invalid-feedback">
+                Jamoa a'zosini ismi yozilmagan
+            </div>
+            <div class="valid-feedback">
+               Yaxshi
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Jamoa a'zosini ismi Rus</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Jamoa a'zosini ismini yozing Rus tilida" value="<%= result.name.ru %>" name="nameru" required>
+            <div class="invalid-feedback">
+                Jamoa a'zosini ismi yozilmagan
+            </div>
+            <div class="valid-feedback">
+               Yaxshi
+            </div>
+        </div>
+
+        <hr style="color: red; height: 2px;">
+<!-- Jamoa a'zosini kasbi model title -->
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Jamoa a'zosini kasbi Uzbek tilida </label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Jamoa a'zosini kasbini yozing uzbek tilida" value="<%= result.job.uz %>" name="jobuz" required>
+            <div class="invalid-feedback">
+                Jamoa a'zosini ismi yozilmagan
+            </div>
+            <div class="valid-feedback">
+               Yaxshi
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Jamoa a'zosini kasbi Rus tilida </label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Jamoa a'zosini kasbini yozing rus tilida" value="<%= result.job.ru %>" name="jobru" required>
+            <div class="invalid-feedback">
+                Jamoa a'zosini kasbi yozilmagan
+            </div>
+            <div class="valid-feedback">
+               Yaxshi
+            </div>
+        </div>
+ 
+
+        <hr style="color: red; height: 2px;">
+
+
+   
+        
+        <button class="btn btn-primary" type="submit">Saqlash</button>
+    </form>
+
+    <!-- Bitta rasmni tahrirlash -->
+    <form method="POST" action="<%=`/team/updateone/${result._id}?_method=PUT`%>" ref="uploadForm"
+        encType="multipart/form-data" class="col-md-4 mt-3">
+        <div class="mb-3">
+            <label>Rasmni tahrirlash</label>
+            <br>
+           
+            <img width="150px" class="col" src="/uploads/team/<%=result.image%>">
+            
+        </div> 
+        <input class="form-control" name="image" type="file" multiple> <br>
+
+        <button type="submit" class="btn btn-primary col-md-5 mt-3">Saqlash</button>
+    </form>
+
+</div>

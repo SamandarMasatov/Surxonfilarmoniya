@@ -1,0 +1,81 @@
+<h1>Maqolalar qo'shish</h1> 
+<div class="container mt-3 mb-3">  
+    <form action="/article/add" method="POST" class="needs-validation" enctype="multipart/form-data" novalidate>
+        <!-- Maqolaning turi model name -->
+        <div class="mb-3"> 
+            <label class="form-label" for="validationCustom01">Maqolaning sarlavhasi Uzbek</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Maqolaning nomini yozing Uzbek tilida" name="nameuz" required>
+            <div class="invalid-feedback">
+                Maqolaning nomi yozilmagan
+            </div>
+            <div class="valid-feedback">
+               Yaxshi
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Maqolaning sarlavhasi Rus</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Maqolaning nomini yozing Rus tilida" name="nameru" required>
+            <div class="invalid-feedback">
+                Maqolaning turi yozilmagan
+            </div>
+            <div class="valid-feedback">
+               Yaxshi
+            </div>
+        </div>
+        <hr style="color: red; height: 2px;">
+        <!-- Maqolaning rasmi model file -->
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Maqolaning rasmi</label>
+            <input type="file" class="form-control" id="validationCustom01" placeholder="Xizmatning rasmini tanlang" name="image" required>
+            <div class="invalid-feedback">
+                Maqolaning rasmi tanlanmagan
+            </div>
+            <div class="valid-feedback">
+               Rasm tanlandi
+            </div>
+        </div>
+        <hr style="color: red; height: 2px;">
+        <!-- Maqoladagi rasmni joyini o'zgartirish -->
+        <div class="mb-3">
+            <label class="form-label" >Maqolaning rasmini chapga yoki o'ngga joylashtirish</label>
+            <select name="change" class="form-select" aria-label="Default select example">
+                <option value="chap" selected>Chap tomon</option>
+                <option value="flex-row-reverse">O'ng tomon</option>
+              </select>
+        </div>
+        <hr style="color: red; height: 2px;">
+<!-- Maqolaning sarlavhasi model title -->
+       <!-- Maqola haqida  model description -->
+       <div class="mb-3">
+        <label class="form-label"  >Maqola haqida Uzbek tilida Rasmni yonidan chiqadi</label>
+        <textarea name="titleuz"  class="form-control"  rows="7" 
+            placeholder="Maqola haqida yozing Uzbek tilida" ></textarea>
+        
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Maqola haqida Rus tilida Rasmni yonidan chiqadi</label>
+        <textarea name="titleru" class="form-control "  rows="7" 
+            placeholder="Maqola haqida yozing rus tilida" ></textarea>
+        
+    </div>
+        <hr style="color: red; height: 2px;">
+<!-- Maqola haqida  model description -->
+        <div class="mb-3">
+            <label class="form-label"  >Maqola haqida Uzbek tilida Ko'proq matn yoziladigan joy</label>
+            <textarea name="descriptionuz"  class="form-control"  rows="12" 
+                placeholder="Maqola haqida yozing Uzbek tilida" ></textarea>
+            
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Maqola haqida Rus tilida Ko'proq matn yoziladigan joy</label>
+            <textarea name="descriptionru" class="form-control "  rows="12" 
+                placeholder="Maqola haqida yozing rus tilida" ></textarea>
+            
+        </div>
+
+        
+        
+        <button class="btn btn-primary" type="submit">Yuklash</button>
+    </form>
+</div> 
+

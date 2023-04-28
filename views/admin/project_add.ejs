@@ -1,0 +1,145 @@
+
+<h1>Loyihalar qo'shish</h1> 
+<div class="container mt-3 mb-3">
+    <form action="/projects/add" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <!-- Loyihaning turi model name -->
+        <div class="mb-3"> 
+            <label class="form-label" for="validationCustom01">Loyihaning turi Uzbek</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Loyihaning turini yozing Uzbek tilida" name="nameuz" required>
+            <div class="invalid-feedback">
+                Loyihaning turi yozilmagan
+            </div>
+            <div class="valid-feedback"> 
+               Yaxshi
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Loyihaning turi Rus</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Loyihaning turini yozing Rus tilida" name="nameru" required>
+            <div class="invalid-feedback">
+                Loyihaning turi yozilmagan
+            </div>
+            <div class="valid-feedback">
+               Yaxshi
+            </div>
+        </div>
+
+<!-- Loyihaning sarlavhasi model title -->
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Loyihaning sarlavhasi Uzbek tilida</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Loyihaning Sarlavhasini yozing uzbek tilida" name="titleuz" required>
+            <div class="invalid-feedback">
+                Loyihaning Sarlavhasi yozilmagan
+            </div>
+            <div class="valid-feedback">
+               Yaxshi
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Loyihaning sarlavhasi Rus tilida</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Loyihaning Sarlavhasini yozing rus tilida" name="titleru" required>
+            <div class="invalid-feedback">
+                Loyihaning Sarlavhasi yozilmagan
+            </div>
+            <div class="valid-feedback">
+               Yaxshi
+            </div>
+        </div>
+
+<!-- Loyihaning rasmi model file -->
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Loyihaning rasmi</label>
+            <input type="file" class="form-control" id="validationCustom01" placeholder="Loyihaning rasmini tanlang" name="image" multiple required>
+            <div class="invalid-feedback">
+                Loyihaning rasmi tanlanmagan
+            </div>
+            <div class="valid-feedback">
+               Rasm tanlandi
+            </div>
+        </div>
+<!-- Loyihaning yili model year -->
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Loyihaning topshirilgan yili</label>
+            <input type="number" class="form-control" id="validationCustom01" placeholder="Loyihaning topshirilgan yili" name="year" required>
+            <div class="invalid-feedback">
+                Loyihaning topshirilgan yili yozilmagan
+            </div>
+            <div class="valid-feedback">
+              Yaxshi
+            </div>
+        </div>
+<!-- Loyihani zakaz qilgan firma model firma -->
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Loyihani qildirgan kompanyani yozing</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Loyihani qildirgan kompanyani yozing " name="firma" required>
+            <div class="invalid-feedback">
+                Loyihani qildirgan kompanya yozilmagan
+            </div>
+            <div class="valid-feedback">
+              Yaxshi
+            </div>
+        </div>
+<!-- Loyihaning nomi model project_name -->
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Loyihaning nomi Uzbek tilida</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Loyihaning nomini yozing Uzbek tilida" name="project_nameuz" required>
+            <div class="invalid-feedback">
+                Loyihani nomi yozilmagan
+            </div>
+            <div class="valid-feedback">
+              Yaxshi
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Loyihaning nomi Rus tilida</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Loyihaning nomini yozing Rus tilida" name="project_nameru" required>
+            <div class="invalid-feedback">
+                Loyihani nomi yozilmagan
+            </div>
+            <div class="valid-feedback">
+              Yaxshi
+            </div>
+        </div>
+
+<!-- Loyihaning qurilgan joyi model location -->
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Loyihaning qurilgan joyi Uzbek tilida</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Loyihaning qurilgan joyini yozing Uzbek tilida" name="locationuz" required>
+            <div class="invalid-feedback">
+                Loyihani qurilgan joyi yozilmagan
+            </div>
+            <div class="valid-feedback">
+              Yaxshi
+            </div>
+        </div> 
+        <div class="mb-3">
+            <label class="form-label" for="validationCustom01">Loyihaning qurilgan joyi Rus tilida</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="Loyihaning qurilgan joyini yozing " name="locationru" required>
+            <div class="invalid-feedback">
+                Loyihani qurilgan joyi yozilmagan
+            </div>
+            <div class="valid-feedback">
+              Yaxshi
+            </div>
+        </div> 
+ 
+<!-- Loyiha haqida  model description -->
+        <div class="mb-3">
+            <label class="form-label"  >Loyiha haqida Uzbek tilida</label>
+            <textarea class="form-control "  rows="5" 
+                placeholder="Loyiha haqida yozing Uzbek tilida" name="descriptionuz" ></textarea>
+            
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Loyiha haqida Rus tilida</label>
+            <textarea class="form-control "  rows="5" 
+                placeholder="Loyiha haqida yozing rus tilida" name="descriptionru" ></textarea>
+            
+        </div>
+    
+        
+        <button class="btn btn-primary" type="submit">Yuklash</button>
+    </form>
+</div>
