@@ -85,9 +85,7 @@
       >
         <span>Biz haqimizda</span>
         <h1 class="about-title"><%= item.title %></h1>
-        <p>
-          <%= item.description %>
-        </p>
+        <p><%= item.description %></p>
         <a class="about_btn" href="#">Batafsil</a>
       </div>
     </div>
@@ -108,18 +106,9 @@
         data-aos-duration="4000"
       >
         <h1 class="about-title">BIZNING JAMOA</h1>
-        <span>
-          O'zbekiston davlat Filarmoniyasi Surxondaryo viloyat xududiy
-          bo'linmasida xozirgi kunda jami: 91 nafar xodim ish faoliyati olib
-          bormoqda. Shundan 58 nafar erkak, 33 nafar ayol, 15 nafar oliy
-          ma'lumotli, 63 nafar o'rta maxsus, 13 nafar o'rta ma'lumotga ega,
-          18-30 yoshgacha 39 nafarni tashkil etadi. 30 Yosh va undan yuqori
-          bo'lgan xodimlar soni 53 nafarni tashkil etadi. 91 nafar xodimdan 7
-          nafari boshqaruv, Ijodiy boshqaruv xodimlar 2 nafar, Ijodiy xodimlar
-          60 nafardan iborat, Mutaxasis va texnik xodimlar 23 nafarni tashkil
-          etadi. O'zbekiston davlat Filarmoniyasi Surxondaryo viloyat bo'linmasi
-          ijodiy jamoasi asosan malakali mutaxasislardan iborat.
-        </span>
+        <% for (let item of teamAbout) { %>
+        <span> <%= item.description %> </span>
+        <%}%>
       </div>
       <div
         class="row card_team_in"
@@ -127,227 +116,23 @@
         data-aos-duration="3000"
       >
         <!-- Card 1 -->
+        <% for (let item of teams) { %>
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card_team_wrapper">
             <div class="card_team">
               <img
                 class="card_team_img img-fluid"
-                src="./img/Our_Team_drector.jpg"
+                src="/uploads/team/<%= item.image %>"
                 alt="new_1.jpg"
               />
               <div class="card_in">
-                <h1>Direktor</h1>
-                <p>
-                  O'zbekiston davlat Filarmoniya Surxondaryo viloyat bo'linmasi
-                  direktori v.b. Xo'jageldiev Erkin Amanovich
-                  <a href="tel:+998912398077">tel: +998 91 239 80 77</a>
-                </p>
+                <h1><%= item.job %></h1>
+                <p><%= item.description %></p>
               </div>
             </div>
           </div>
         </div>
-        <!-- Card 2 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card_team_wrapper">
-            <div class="card_team">
-              <img
-                class="card_team_img img-fluid"
-                src="./img/Our_Team_b_mamur.jpg"
-                alt="Our_Team_b_mamur.jpg"
-              />
-              <div class="card_in">
-                <h1>Bosh Ma'mur</h1>
-                <p>
-                  O'zbekiston davlat Filarmoniya Surxondaryo viloyat bo'linmasi
-                  Bosh Ma'muri Maxmataliev Abdigapar Ibragimovich
-                  <a href="tel:+998937960912">tel: +998 93 796 09 12</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3 -->
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="card_team_wrapper">
-            <div class="card_team">
-              <img
-                class="card_team_img img-fluid"
-                src="./img/Our_Team_b_bugalter.jpg"
-                alt="Our_Team_b_bugaljpg"
-              />
-              <div class="card_in">
-                <h1>Bosh Buxgalter</h1>
-                <p>
-                  O'zbekiston davlat Filarmoniya Surxondaryo viloyat bo'linmasi
-                  Bosh buxgalteri Fayzullayev Abdurashid Abdulxamidovich
-                  <a href="tel:+998902471596">tel: +998 90 247 15 96</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="all_card_item" data-aos="zoom-out" data-aos-duration="3000">
-          <div class="d_none_card row justify-content-center">
-            <!-- 4 -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card_team_wrapper">
-                <div class="card_team">
-                  <img
-                    class="card_team_img img-fluid"
-                    src="./img/Our_Team_b_rahbar.jpg"
-                    alt="Our_Team_b_rahbar.jpg"
-                  />
-                  <div class="card_in">
-                    <h1>Badiiy Rahbar</h1>
-                    <p>
-                      O'zbekiston davlat Filarmoniya Surxondaryo viloyat
-                      bo'linmasi Badiiy rahbari Nuraliev Elbek Arzikulovich
-                      <a href="tel:+998903777732">tel: +998 90 377 77 32</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 5 -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card_team_wrapper">
-                <div class="card_team">
-                  <img
-                    class="card_team_img img-fluid"
-                    src="./img/konsert_boshliq.jpg"
-                    alt="konsert_boshliq.jpg"
-                  />
-                  <div class="card_in">
-                    <h1>Konsert bo'limi boshlig'i</h1>
-                    <p>
-                      O'zbekiston davlat Filarmoniya Surxondaryo viloyat
-                      bo'linmasi Konsert tadbirlarni tashkil etish va boshqarish
-                      bo'limi boshlig'i Vaxidova Farida Absalomovna
-                      <a href="tel:+998972429095">tel: +998 97 242 90 95</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 6 -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card_team_wrapper">
-                <div class="card_team">
-                  <img
-                    class="card_team_img img-fluid"
-                    src="./img/kadrlar_boshliq.jpg"
-                    alt="kadrlar_boshliq.jpg"
-                  />
-                  <div class="card_in">
-                    <h1>Kadrlar bo'limi boshlig'i</h1>
-                    <p>
-                      O'zbekiston davlat Filarmoniya Surxondaryo viloyat
-                      bo'linmasi xodimlar bilan ishlash bo'limi boshlig'i
-                      Naralieva Dilafruz Elmurodovna
-                      <a href="tel:+998915737224">tel:+998 91 573 72 24</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 7 -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card_team_wrapper">
-                <div class="card_team">
-                  <img
-                    class="card_team_img img-fluid"
-                    src="./img/team1.jfif"
-                    alt="new_1.jpg"
-                  />
-                  <div class="card_in">
-                    <h1>Xonanda</h1>
-                    <p>
-                      O'zbekiston Davlat Filarmoniya Surxondaryo viloyat
-                      bo'linmasi xonandasi Zuxra Nazarova
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 8 -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card_team_wrapper">
-                <div class="card_team">
-                  <img
-                    class="card_team_img img-fluid"
-                    src="./img/team3.jfif"
-                    alt="new_1.jpg"
-                  />
-                  <div class="card_in">
-                    <h1>Xonanda</h1>
-                    <p>
-                      O'zbekiston Davlat Filarmoniya Surxondaryo viloyat
-                      bo'linmasi xonandasi Nilufarxon Abdullayeva
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 9 -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card_team_wrapper">
-                <div class="card_team">
-                  <img
-                    class="card_team_img img-fluid"
-                    src="./img/team2.jfif"
-                    alt="new_1.jpg"
-                  />
-                  <div class="card_in">
-                    <h1>Xonanda</h1>
-                    <p>
-                      O'zbekiston Davlat Filarmoniya Surxondaryo viloyat
-                      bo'linmasi xonandasi Dilmurod Zoirov
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 10 -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card_team_wrapper">
-                <div class="card_team">
-                  <img
-                    class="card_team_img img-fluid"
-                    src="./img/honanda_card_10.jpg"
-                    alt="honanda_card_10.jpg"
-                  />
-                  <div class="card_in">
-                    <h1>Xonanda</h1>
-                    <p>
-                      O'zbekiston Davlat Filarmoniya Surxondaryo viloyat
-                      bo'linmasi xonandasi Vahobjon Nortojiyev
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- 11 -->
-            <div class="col-12 col-md-6 col-lg-4">
-              <div class="card_team_wrapper">
-                <div class="card_team">
-                  <img
-                    class="card_team_img img-fluid"
-                    src="./img/honanda_card_11.jpg"
-                    alt="honanda_card_11.jpg"
-                  />
-                  <div class="card_in">
-                    <h1>Xonanda</h1>
-                    <p>
-                      O'zbekiston Davlat Filarmoniya Surxondaryo viloyat
-                      bo'linmasi xonandasi Suyunbek Ergashev
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button class="close_batafsil d-block mx-auto mt-4">Yopish</button>
-        </div>
+        <%}%>
       </div>
       <div class="team_btn">
         <a class="team_link" href="#">Batafsil</a>

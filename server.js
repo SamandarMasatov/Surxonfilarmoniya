@@ -96,6 +96,9 @@ app.use("/news", require("./router/news"));
 // Team
 app.use("/team", require("./router/team"));
 
+// Team
+app.use("/teamAbout", require("./router/teamAbout"));
+
 // Contact
 app.use("/contact", require("./router/contact"));
 
