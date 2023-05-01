@@ -8,35 +8,35 @@
 
 exports.index = async (req, res) => {
     res.render("./admin/index", { 
-        title: "Stroy Montaj Invest Boshqaruv paneli",  
+        title: "Surxonfilarmoniya Boshqaruv paneli",  
         layout: "./admin_layout", 
     })
 }
 
 exports.projectsAdd = async (req, res) => {
     res.render("./admin/project_add", { 
-        title: "Stroy Montaj Invest Loyiha qo'shihs", 
+        title: "Surxonfilarmoniya Loyiha qo'shihs", 
         layout: "./admin_layout",
     })
 }
 exports.projects = async (req, res) => {
     const projects = await Projects.find().sort({date: -1});
     res.render("./admin/projects", { 
-        title: "Stroy Montaj Invest Loyihalari", 
+        title: "Surxonfilarmoniya Loyihalari", 
         layout: "./admin_layout",
         projects,
     })
 }
 exports.services_add = async (req, res) => {
     res.render("./admin/services_add", { 
-        title: "Stroy Montaj Invest Xizmat qo'shish", 
+        title: "Surxonfilarmoniya Xizmat qo'shish", 
         layout: "./admin_layout",
     })
 }
 exports.services = async (req, res) => {
     const services = await Services.find().sort({date: -1});
     res.render("./admin/services", { 
-        title: "Stroy Montaj Invest Xizmatlari", 
+        title: "Surxonfilarmoniya Xizmatlari", 
         layout: "./admin_layout",
         services
     })

@@ -1,21 +1,54 @@
-<h1>Kompanya haqida</h1>
+<h1>Filarmoniya haqida</h1>
 <div class="container mt-3 mb-3">
-    <form action="/about/add" method="POST" class="needs-validation" novalidate>
-       <!-- Loyiha haqida  model name -->
-       <div class="mb-3"> 
-        <label class="form-label"  >Kompanya haqida Uzbek tilida</label>
-        <textarea class="form-control "  rows="5" 
-          placeholder="Kompanya haqida yozing Uzbek tilida" name="nameuz" ></textarea>
-        
-    </div>
+  <form
+    action="/about/add"
+    method="POST"
+    class="needs-validation"
+    enctype="multipart/form-data"
+    novalidate
+  >
     <div class="mb-3">
-        <label class="form-label">Kompanya haqida Rus tilida</label>
-        <textarea class="form-control "  rows="5" 
-            placeholder="Kompanya haqida yozing rus tilida" name="nameru" ></textarea>
-        
+      <label class="form-label" for="validationCustom01"
+        >Biz haqimizda sarlavhasi</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom01"
+        placeholder="Biz haqimizda sarlavhasi"
+        name="title"
+        required
+      />
+      <div class="invalid-feedback">Biz haqimizda sarlavhasi yozilmagan</div>
+      <div class="valid-feedback">Yaxshi</div>
+    </div>
+    <!-- Maqolaning rasmi model file -->
+    <div class="mb-3">
+      <label class="form-label" for="validationCustom01"
+        >Maqolaning rasmi</label
+      >
+      <input
+        type="file"
+        class="form-control"
+        id="validationCustom01"
+        placeholder="Xizmatning rasmini tanlang"
+        name="image"
+        required
+      />
+      <div class="invalid-feedback">Biz haqimizda rasmi tanlamagan</div>
+      <div class="valid-feedback">Rasm tanlandi</div>
+    </div>
+    <!-- Loyiha haqida  model name -->
+    <div class="mb-3">
+      <label class="form-label">Filarmoniya haqida batafsil</label>
+      <textarea
+        class="form-control"
+        rows="5"
+        placeholder="Filarmoniya haqida batafsil"
+        name="description"
+      ></textarea>
     </div>
 
-        
-        <button class="btn btn-primary" type="submit">Yuklash</button>
-    </form>
+    <button class="btn btn-primary" type="submit">Yuklash</button>
+  </form>
 </div>

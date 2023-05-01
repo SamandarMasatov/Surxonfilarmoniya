@@ -1,89 +1,138 @@
 <h1>Maqolalarni tahrirlash</h1>
 
-<div class="container mt-3 mb-3"> 
-    <form method="POST" action="<%=`/article/${result._id}?_method=PUT`%>"  class="needs-validation" novalidate>
-         <!-- Maqolaning turi model name -->
-         <div class="mb-3"> 
-            <label class="form-label" for="validationCustom01">Maqolaning sarlavhasi Uzbek</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Maqolaning nomini yozing Uzbek tilida" name="nameuz" value="<%= result.name.uz %>"  required>
-            <div class="invalid-feedback">
-                Maqolaning nomi yozilmagan
-            </div>
-            <div class="valid-feedback">
-               Yaxshi
-            </div>
-        </div>
+<div class="container mt-3 mb-3">
+  <form
+    method="POST"
+    action="<%=`/article/${result._id}?_method=PUT`%>"
+    class="needs-validation"
+    novalidate
+  >
+    <!-- Maqolaning turi model name -->
+    <div class="mb-3">
+      <label class="form-label" for="validationCustom01"
+        >Maqolaning sarlavhasi Uzbek</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom01"
+        placeholder="Maqolaning nomini yozing Uzbek tilida"
+        name="nameuz"
+        value="<%= result.name.uz %>"
+        required
+      />
+      <div class="invalid-feedback">Maqolaning nomi yozilmagan</div>
+      <div class="valid-feedback">Yaxshi</div>
+    </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="validationCustom01">Maqolaning sarlavhasi Rus</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Maqolaning nomini yozing Rus tilida"  name="nameru" value="<%= result.name.ru %>"  required>
-            <div class="invalid-feedback">
-                Maqolaning turi yozilmagan
-            </div>
-            <div class="valid-feedback">
-               Yaxshi
-            </div>
-        </div>
-        <hr style="color: red; height: 2px;">
-        <!-- Maqoladagi rasmni joyini o'zgartirish -->
-        <div class="mb-3">
-            <label class="form-label" >Maqolaning rasmini chapga yoki o'ngga joylashtirish</label>
-            <select name="change" class="form-select" aria-label="Default select example">
-                <option value="chap" selected>Chap tomon</option>
-                <option value="flex-row-reverse">O'ng tomon</option>
-            </select>
-        </div>
-        <hr style="color: red; height: 2px;">
-       <!-- Maqola haqida  model description -->
-       <div class="mb-3">
-        <label class="form-label"  >Maqola haqida Uzbek tilida Rasmni yonidan chiqadi</label>
-        <textarea name="titleuz"  class="form-control"  rows="7" 
-            placeholder="Maqola haqida yozing Uzbek tilida" ><%= result.title.uz %></textarea>
-        
+    <div class="mb-3">
+      <label class="form-label" for="validationCustom01"
+        >Maqolaning sarlavhasi Rus</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom01"
+        placeholder="Maqolaning nomini yozing Rus tilida"
+        name="nameru"
+        value="<%= result.name.ru %>"
+        required
+      />
+      <div class="invalid-feedback">Maqolaning turi yozilmagan</div>
+      <div class="valid-feedback">Yaxshi</div>
+    </div>
+    <hr style="color: red; height: 2px" />
+    <!-- Maqoladagi rasmni joyini o'zgartirish -->
+    <div class="mb-3">
+      <label class="form-label"
+        >Maqolaning rasmini chapga yoki o'ngga joylashtirish</label
+      >
+      <select
+        name="change"
+        class="form-select"
+        aria-label="Default select example"
+      >
+        <option value="chap" selected>Chap tomon</option>
+        <option value="flex-row-reverse">O'ng tomon</option>
+      </select>
+    </div>
+    <hr style="color: red; height: 2px" />
+    <!-- Maqola haqida  model description -->
+    <div class="mb-3">
+      <label class="form-label"
+        >Maqola haqida Uzbek tilida Rasmni yonidan chiqadi</label
+      >
+      <textarea
+        name="titleuz"
+        class="form-control"
+        rows="7"
+        placeholder="Maqola haqida yozing Uzbek tilida"
+      >
+<%= result.title.uz %></textarea
+      >
     </div>
     <div class="mb-3">
-        <label class="form-label">Maqola haqida Rus tilida Rasmni yonidan chiqadi</label>
-        <textarea name="titleru" class="form-control "  rows="7" 
-            placeholder="Maqola haqida yozing rus tilida" ><%= result.title.ru %></textarea>
-        
+      <label class="form-label"
+        >Maqola haqida Rus tilida Rasmni yonidan chiqadi</label
+      >
+      <textarea
+        name="titleru"
+        class="form-control"
+        rows="7"
+        placeholder="Maqola haqida yozing rus tilida"
+      >
+<%= result.title.ru %></textarea
+      >
     </div>
-    
-        <hr style="color: red; height: 2px;">
-      <!-- Xizmat haqida  model description -->
 
-        <div class="mb-3">
-            <label class="form-label"  >Xizmat haqida Uzbek tilida tahrirlash</label>
-            <textarea class="form-control "  rows="12" 
-                placeholder="Xizmat haqida yozing Uzbek tilida" name="descriptionuz"><%= result.description.uz %></textarea>
-            
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Xizmat haqida Rus tilida tahrirlash</label>
-            <textarea class="form-control "  rows="12" 
-                placeholder="Xizmat haqida yozing rus tilida" name="descriptionru"><%= result.description.ru %></textarea>
-            
-        </div>
+    <hr style="color: red; height: 2px" />
+    <!-- Xizmat haqida  model description -->
 
-        
-        <button class="btn btn-primary" type="submit">Saqlash</button>
-    </form>
-<!-- Bitta rasmni tahrirlash -->
-    <form method="POST" action="<%=`/article/updateone/${result._id}?_method=PUT`%>" ref="uploadForm"
-        encType="multipart/form-data" class="col-md-4 mt-3">
-        <div class="mb-3">
-            <label>Rasmni tahrirlash</label>
-            <br>
-           
-            <img width="150px" class="col" src="/uploads/articles/<%=result.image%>">
-            
-        </div> 
-        <input class="form-control" name="image" type="file" multiple> <br>
+    <div class="mb-3">
+      <label class="form-label">Xizmat haqida Uzbek tilida tahrirlash</label>
+      <textarea
+        class="form-control"
+        rows="12"
+        placeholder="Xizmat haqida yozing Uzbek tilida"
+        name="descriptionuz"
+      >
+<%= result.description.uz %></textarea
+      >
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Xizmat haqida Rus tilida tahrirlash</label>
+      <textarea
+        class="form-control"
+        rows="12"
+        placeholder="Xizmat haqida yozing rus tilida"
+        name="descriptionru"
+      >
+<%= result.description.ru %></textarea
+      >
+    </div>
 
-        <button type="submit" class="btn btn-primary col-md-5 mt-3">Saqlash</button>
-    </form>
+    <button class="btn btn-primary" type="submit">Saqlash</button>
+  </form>
+  <!-- Bitta rasmni tahrirlash -->
+  <form
+    method="POST"
+    action="<%=`/article/updateone/${result._id}?_method=PUT`%>"
+    ref="uploadForm"
+    encType="multipart/form-data"
+    class="col-md-4 mt-3"
+  >
+    <div class="mb-3">
+      <label>Rasmni tahrirlash</label>
+      <br />
 
+      <img
+        width="150px"
+        class="col"
+        src="/uploads/articles/<%=result.image%>"
+      />
+    </div>
+    <input class="form-control" name="image" type="file" multiple /> <br />
 
- 
-   
-    
+    <button type="submit" class="btn btn-primary col-md-5 mt-3">Saqlash</button>
+  </form>
 </div>

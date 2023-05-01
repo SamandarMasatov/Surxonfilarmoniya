@@ -1,86 +1,66 @@
-<h1>Jamoa qo'shish</h1>  
-<div class="container mt-3 mb-3">  
-    <form action="/team/add" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-        <!-- Jamoa a'zosini ismi model name -->
-        <div class="mb-3"> 
-            <label class="form-label" for="validationCustom01">Jamoa a'zosini ismi Uzbek</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Jamoa a'zosini ismi yozing Uzbek tilida" name="nameuz" required>
-            <div class="invalid-feedback">
-                Jamoa a'zosini ismi yozilmagan
-            </div>
-            <div class="valid-feedback">
-               Yaxshi
-            </div>
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="validationCustom01">Jamoa a'zosini ismi Rus</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Jamoa a'zosini ismini yozing Rus tilida" name="nameru" required>
-            <div class="invalid-feedback">
-                Jamoa a'zosini ismi yozilmagan
-            </div>
-            <div class="valid-feedback">
-               Yaxshi
-            </div>
-        </div>
+<h2>Jamoa a'zosi qo'shish</h2>
+<div class="container mt-3 mb-3">
+  <form
+    action="/team/add"
+    method="POST"
+    enctype="multipart/form-data"
+    class="needs-validation"
+    novalidate
+  >
+    <!-- Jamoa a'zosini ismi model name -->
+    <div class="mb-3">
+      <label class="form-label"
+        >Jamoa a'zosi haqida batafsil ism, familya, kasbi,</label
+      >
+      <textarea
+        class="form-control"
+        rows="5"
+        placeholder="Jamoa a'zosi haqida batafsil ism, familya, kasbi,"
+        name="description"
+      ></textarea>
+    </div>
 
-        <hr style="color: red; height: 2px;">
-<!-- Jamoa a'zosini kasbi model title -->
-        <div class="mb-3">
-            <label class="form-label" for="validationCustom01">Jamoa a'zosini kasbi Uzbek tilida </label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Jamoa a'zosini kasbini yozing uzbek tilida" name="jobuz" required>
-            <div class="invalid-feedback">
-                Jamoa a'zosini ismi yozilmagan
-            </div>
-            <div class="valid-feedback">
-               Yaxshi
-            </div> 
-        </div>
+    <hr style="color: red; height: 2px" />
+    <!-- Jamoa a'zosini kasbi model title -->
+    <div class="mb-3">
+      <label class="form-label" for="validationCustom01"
+        >Jamoa a'zosini kasbi Uzbek tilida
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="validationCustom01"
+        placeholder="Jamoa a'zosini kasbini yozing "
+        name="job"
+        required
+      />
+      <div class="invalid-feedback">Jamoa a'zosini kasbi yozilmagan</div>
+      <div class="valid-feedback">Yaxshi</div>
+    </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="validationCustom01">Jamoa a'zosini kasbi Rus tilida </label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Jamoa a'zosini kasbini yozing rus tilida" name="jobru" required>
-            <div class="invalid-feedback">
-                Jamoa a'zosini kasbi yozilmagan
-            </div>
-            <div class="valid-feedback">
-               Yaxshi
-            </div>
-        </div>
- 
-        <hr style="color: red; height: 2px;">
-<!-- Jamoa a'zosini rasmi model file -->
-        <div class="mb-3">
-            <label class="form-label" for="validationCustom01">Jamoa a'zosini rasmi</label>
-            <input type="file" class="form-control" id="validationCustom01" placeholder="Jamoa a'zosini rasmini tanlang" name="image" required>
-            <div class="invalid-feedback">
-                Jamoa a'zosini rasmi tanlanmagan
-            </div>
-            <div class="valid-feedback">
-               Rasm tanlandi
-            </div>
-        </div>
-       
-        <hr style="color: red; height: 2px;">
-        
-        
-        <button class="btn btn-primary" type="submit">Yuklash</button>
-    </form> 
+    <hr style="color: red; height: 2px" />
+    <!-- Jamoa a'zosini rasmi model file -->
+    <div class="mb-3">
+      <label class="form-label" for="validationCustom01"
+        >Jamoa a'zosini rasmi</label
+      >
+      <input
+        type="file"
+        class="form-control"
+        id="validationCustom01"
+        placeholder="Jamoa a'zosini rasmini tanlang"
+        name="image"
+        required
+      />
+      <div class="invalid-feedback">Jamoa a'zosini rasmi tanlanmagan</div>
+      <div class="valid-feedback">Rasm tanlandi</div>
+    </div>
+
+    <hr style="color: red; height: 2px" />
+
+    <button class="btn btn-primary" type="submit">Yuklash</button>
+  </form>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- <hr style="color: red; height: 2px;"> -->
 <!-- Jamoa a'zosining telegram profile yoki bo'lsa telegram kanali -->

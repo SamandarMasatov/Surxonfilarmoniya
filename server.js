@@ -11,7 +11,7 @@ const mongoose = require("mongoose");
 const i18n = require("i18n-express");
 const sessionValues = require("./config/sesion");
 const MongoDBSession = require("connect-mongodb-session")(session);
-const MongoURI = "mongodb://localhost:27017/Stroy_montaj";
+const MongoURI = "mongodb://localhost:27017/Filarmoniya";
 
 mongoose
   .connect(MongoURI, {
@@ -103,6 +103,5 @@ const port = 4004;
 app.listen(port, () => {
   console.log(`Server is running in ${port}`);
 });
-
 
 // YecfTXfoia9JYv68
