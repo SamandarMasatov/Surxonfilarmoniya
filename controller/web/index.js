@@ -62,7 +62,7 @@ exports.contact = async (req, res) => {
 exports.projectOne = async (req, res) => {
   const result = await Projects.findById({ _id: req.params.id });
   res.render("./web/article_one", {
-    title: "Suv tozalash inshootlari | Stroy montaj invest",
+    title: "Filarmoniya Maqolalar",
     layout: "./web_layout",
     result,
   });

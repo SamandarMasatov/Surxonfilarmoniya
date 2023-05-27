@@ -402,10 +402,12 @@
       <% for (var i = 0; i < articles.length; i++) { %> <% if (i == 3) { break;
       } %>
       <div class="column" >
+        <a href="<%=`/maqola/${articles[i]._id}`%>">
         <img
         src="/uploads/articles/<%= articles[i].image %>"
         />
-        <h2><a href="#"><%- articles[i].title %></a></h2>
+      </a>
+        <h2><a href="<%=`/maqola/${articles[i]._id}`%>"><%- articles[i].title %></a></h2>
         <span>18 Dec 2017</span>
         <p class="clamp">
           <%- articles[i].description %>
