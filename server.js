@@ -101,6 +101,10 @@ app.use("/teamAbout", require("./router/teamAbout"));
 
 // Contact
 app.use("/contact", require("./router/contact"));
+// home audio
+app.use("/home", require("./router/home"));
+// audios
+app.use("/audio", require("./router/audios"));
 
 const port = 4004;
 app.listen(port, () => {

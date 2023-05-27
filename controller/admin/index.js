@@ -1,6 +1,6 @@
-const Projects = require("../../models/projects");
+const Home = require("../../models/home");
 const Abouts = require("../../models/about");
-const Services = require("../../models/services");
+const Audios = require("../../models/audios");
 const News = require("../../models/news");
 const Teams = require("../../models/team");
 const TeamAbout = require("../../models/teamAbout");
@@ -21,25 +21,25 @@ exports.projectsAdd = async (req, res) => {
   });
 };
 exports.projects = async (req, res) => {
-  const projects = await Projects.find().sort({ date: -1 });
+  const home = await Home.find().sort({ createdAt: -1 });
   res.render("./admin/projects", {
-    title: "Surxonfilarmoniya Loyihalari",
+    title: "Bosh sahifaga qo'shiq yuklash",
     layout: "./admin_layout",
-    projects,
+    home,
   });
 };
 exports.services_add = async (req, res) => {
   res.render("./admin/services_add", {
-    title: "Surxonfilarmoniya Xizmat qo'shish",
+    title: "Qo'shiqlar qo'shish",
     layout: "./admin_layout",
   });
 };
 exports.services = async (req, res) => {
-  const services = await Services.find().sort({ date: -1 });
+  const audios = await Audios.find().sort({ createdAt: -1 });
   res.render("./admin/services", {
-    title: "Surxonfilarmoniya Xizmatlari",
+    title: "Qushiqlar",
     layout: "./admin_layout",
-    services,
+    audios,
   });
 };
 

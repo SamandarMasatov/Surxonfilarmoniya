@@ -56,20 +56,7 @@ header {
 }
 
 .collapse_menu {
-  -webkit-animation: openMenu 0.7s;
-          animation: openMenu 0.7s;
-}
-
-@-webkit-keyframes openMenu {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation: openMenu 0.7s;
 }
 
 @keyframes openMenu {
@@ -751,4 +738,12 @@ main #carusel .item img {
   .about-title {
     font-size: 27px !important;
   }
+}
+.column {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 30px;
+  color: #4d4d4d;
 }/*# sourceMappingURL=style.css.map */

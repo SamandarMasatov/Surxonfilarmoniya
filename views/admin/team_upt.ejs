@@ -7,75 +7,37 @@
       class="needs-validation"
       novalidate
     >
-      <!-- Jamoa a'zosini ismi model name -->
-      <div class="mb-3">
-        <label class="form-label" for="validationCustom01"
-          >Jamoa a'zosini ismi Uzbek</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="validationCustom01"
-          placeholder="Jamoa a'zosini ismi yozing Uzbek tilida"
-          value="<%= result.name.uz %>"
-          name="nameuz"
-          required
-        />
-        <div class="invalid-feedback">Jamoa a'zosini ismi yozilmagan</div>
-        <div class="valid-feedback">Yaxshi</div>
-      </div>
-      <div class="mb-3">
-        <label class="form-label" for="validationCustom01"
-          >Jamoa a'zosini ismi Rus</label
-        >
-        <input
-          type="text"
-          class="form-control"
-          id="validationCustom01"
-          placeholder="Jamoa a'zosini ismini yozing Rus tilida"
-          value="<%= result.name.ru %>"
-          name="nameru"
-          required
-        />
-        <div class="invalid-feedback">Jamoa a'zosini ismi yozilmagan</div>
-        <div class="valid-feedback">Yaxshi</div>
-      </div>
+ <!-- Jamoa a'zosini ismi model name -->
+ <div class="mb-3">
+  <label class="form-label"
+    >Jamoa a'zosi haqida batafsil ism, familya, kasbi,</label
+  >
+  <textarea
+    class="form-control"
+    rows="5"
+    placeholder="Jamoa a'zosi haqida batafsil ism, familya, kasbi,"
+    name="description"
+  ><%= result.description %></textarea>
+</div>
 
-      <hr style="color: red; height: 2px" />
-      <!-- Jamoa a'zosini kasbi model title -->
-      <div class="mb-3">
-        <label class="form-label" for="validationCustom01"
-          >Jamoa a'zosini kasbi Uzbek tilida
-        </label>
-        <input
-          type="text"
-          class="form-control"
-          id="validationCustom01"
-          placeholder="Jamoa a'zosini kasbini yozing uzbek tilida"
-          value="<%= result.job.uz %>"
-          name="jobuz"
-          required
-        />
-        <div class="invalid-feedback">Jamoa a'zosini ismi yozilmagan</div>
-        <div class="valid-feedback">Yaxshi</div>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label" for="validationCustom01"
-          >Jamoa a'zosini kasbi Rus tilida
-        </label>
-        <input
-          type="text"
-          class="form-control"
-          id="validationCustom01"
-          placeholder="Jamoa a'zosini kasbini yozing rus tilida"
-          value="<%= result.job.ru %>"
-          name="jobru"
-          required
-        />
-        <div class="invalid-feedback">Jamoa a'zosini kasbi yozilmagan</div>
-        <div class="valid-feedback">Yaxshi</div>
-      </div>
+<hr style="color: red; height: 2px" />
+<!-- Jamoa a'zosini kasbi model title -->
+<div class="mb-3">
+  <label class="form-label" for="validationCustom01"
+    >Jamoa a'zosini kasbi Uzbek tilida
+  </label>
+  <input
+    type="text"
+    class="form-control"
+    id="validationCustom01"
+    placeholder="Jamoa a'zosini kasbini yozing "
+    name="job"
+    value="<%= result.job %>"
+    required
+  />
+  <div class="invalid-feedback">Jamoa a'zosini kasbi yozilmagan</div>
+  <div class="valid-feedback">Yaxshi</div>
+</div>
 
       <hr style="color: red; height: 2px" />
 

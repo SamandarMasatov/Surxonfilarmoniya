@@ -20,6 +20,8 @@ exports.create = async (req, res) => {
     });
 };
 
+
+
 exports.getOne = async (req, res, next) => {
   const result = await Team.findById({ _id: req.params.id });
   res.render("./admin/team_upt", {
@@ -81,10 +83,8 @@ exports.UpdateOne = async (req, res, next) => {
 exports.updateInfo = async (req, res, next) => {
   const result = await Team.findByIdAndUpdate({ _id: req.params.id });
 
-  result.name.uz = req.body.nameuz;
-  result.name.ru = req.body.nameru;
-  result.job.uz = req.body.jobuz;
-  result.job.ru = req.body.jobru;
+  result.description = req.body.description;
+  result.job = req.body.job;
   await result
     .save()
     .then(() => {

@@ -18,33 +18,33 @@ const closeBatafsil = document.querySelector(".close_batafsil");
 const navbarToggler = document.querySelector(".navbar_open_btnn");
 const closeBtn = document.querySelector(".close_btn");
 const collapseMenu = document.querySelector(".collapse_menu");
-// console.log(batafsil);
+// console.log(batafsil); 
 
-navbarToggler.addEventListener('click', function(event){
+navbarToggler.addEventListener("click", function (event) {
   event.preventDefault();
-  navbarToggler.style.display = "none";
-  closeBtn.style.display = "block";
-  collapseMenu.style.display = "block";
-})
+  navbarToggler.style.display = "none"; 
+  closeBtn.style.display = "block"; 
+  collapseMenu.style.display = "block"; 
+});
 // --------
-closeBtn.addEventListener('click', function(event){
+closeBtn.addEventListener("click", function (event) {
   event.preventDefault();
   collapseMenu.style.display = "none";
   navbarToggler.style.display = "block";
   closeBtn.style.display = "none";
-})
+});
 // -----------------------
-batafsil.addEventListener('click', function(event){
+batafsil.addEventListener("click", function (event) {
   event.preventDefault();
   document.querySelector(".all_card_item").style.display = "block";
-  batafsil.style.display = "none"
-})
+  batafsil.style.display = "none";
+});
 
-closeBatafsil.addEventListener('click', function(event){
+closeBatafsil.addEventListener("click", function (event) {
   event.preventDefault();
   document.querySelector(".all_card_item").style.display = "none";
-  batafsil.style.display = "block"
-})
+  batafsil.style.display = "block";
+});
 // ---------------------------------------------------------------------------------------------------------
 let isPlay = true;
 let clearTime = 0;
@@ -52,13 +52,13 @@ let x = 0;
 const carusel = document.getElementById("carusel");
 let homeI = 0;
 let n = 1,
-    playn = document.getElementById(`palay${n}`),
-    mpn = document.getElementById(`mpn${n}`),
-    line = document.querySelector(`#line${n}`),
-    lineIn = document.querySelector(`#line-in${n}`),
-    id = 0,
-    t = true,
-    interval = 0;
+  playn = document.getElementById(`palay${n}`),
+  mpn = document.getElementById(`mpn${n}`),
+  line = document.querySelector(`#line${n}`),
+  lineIn = document.querySelector(`#line-in${n}`),
+  id = 0,
+  t = true,
+  interval = 0;
 
 $(".News_page_carousel").owlCarousel({
   loop: true,
@@ -96,24 +96,24 @@ window.addEventListener("scroll", () => {
 
 // video uchun
 
-const videoPlay = document.querySelector('#video-play');
-const videoPause = document.querySelector('#video-pause');
-const bgImg = document.querySelector('.open');
-const video = document.querySelector('#mp4');
+const videoPlay = document.querySelector("#video-play");
+const videoPause = document.querySelector("#video-pause");
+const bgImg = document.querySelector(".open");
+const video = document.querySelector("#mp4");
 
-videoPlay.addEventListener('click', function () {
+videoPlay.addEventListener("click", function () {
   video.play();
-  video.classList.remove('d-none');
-  bgImg.classList.add('d-none')
-  videoPlay.classList.add('d-none')
-  videoPause.classList.remove('d-none')
+  video.classList.remove("d-none");
+  bgImg.classList.add("d-none");
+  videoPlay.classList.add("d-none");
+  videoPause.classList.remove("d-none");
 });
 
-videoPause.addEventListener('click', function(){
-  video.classList.add('d-none');
-  bgImg.classList.remove('d-none');
-  videoPlay.classList.remove('d-none');
-  videoPause.classList.add('d-none');
+videoPause.addEventListener("click", function () {
+  video.classList.add("d-none");
+  bgImg.classList.remove("d-none");
+  videoPlay.classList.remove("d-none");
+  videoPause.classList.add("d-none");
   video.pause();
   video.currentTime = 0;
 });
@@ -205,28 +205,30 @@ function mpPlay(index) {
   clearInterval(interval);
   playn.innerHTML = `<i class="fa-solid fa-play ms-1"></i>`;
   findId(index);
-  if(mpn.currentTime != 0){
-    if(t){
+  if (mpn.currentTime != 0) {
+    if (t) {
       mpn.pause();
       clearInterval(interval);
       t = false;
       playn.innerHTML = `<i class="fa-solid fa-play ms-1"></i>`;
-    }
-    else{
+    } else {
       t = true;
       mpn.play();
       PlayInterval();
       playn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
-    };
-  }else{
+    }
+  } else {
     mpn.play();
-    PlayInterval()
+    PlayInterval();
     playn.innerHTML = `<i class="fa-solid fa-pause"></i>`;
     t = true;
   }
 }
-function PlayInterval(){
+function PlayInterval() {
   interval = setInterval(() => {
-    lineIn.style.width = Math.floor(line.clientWidth * parseInt(mpn.currentTime) / parseInt(mpn.duration)) + "px";
+    lineIn.style.width =
+      Math.floor(
+        (line.clientWidth * parseInt(mpn.currentTime)) / parseInt(mpn.duration)
+      ) + "px";
   }, 1000);
 }

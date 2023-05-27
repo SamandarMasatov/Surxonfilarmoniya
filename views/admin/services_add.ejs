@@ -1,82 +1,60 @@
-<h1>Xizmatlar qo'shish</h1> 
-<div class="container mt-3 mb-3">  
-    <form action="/services/add" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
-        <!-- Xizmatning turi model name -->
-        <div class="mb-3"> 
-            <label class="form-label" for="validationCustom01">Xizmatning nomi Uzbek</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Xizmatning nomini yozing Uzbek tilida" name="nameuz" required>
-            <div class="invalid-feedback">
-                Xizmatning nomi yozilmagan 
-            </div>
-            <div class="valid-feedback">
-               Yaxshi
-            </div>
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="validationCustom01">Xizmatning nomi Rus</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Xizmatning nomini yozing Rus tilida" name="nameru" required>
-            <div class="invalid-feedback">
-                Xizmatning turi yozilmagan
-            </div>
-            <div class="valid-feedback">
-               Yaxshi
-            </div>
-        </div>
+<h1>Qo'shiq qo'shish</h1>
+<div class="container mt-3 mb-3">
+  <form
+    action="/audio/add"
+    method="POST"
+    enctype="multipart/form-data"
+    class="needs-validation"
+    novalidate
+  >
+     <!-- Loyihaning turi model name -->
+     <div class="mb-3">
+        <label class="form-label" for="validationCustom01"
+          >Qo'shiqning nomini yozing</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          placeholder="Qo'shiqning nomini yozing"
+          name="title"
+          required
+        />
+        <div class="invalid-feedback">Qo'shiqni nomi yozilmagan</div>
+        <div class="valid-feedback">Yaxshi</div>
+      </div>
+      <!-- Loyihaning turi model name -->
+      <div class="mb-3">
+        <label class="form-label" for="validationCustom01"
+          >Artistni yozing</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          placeholder="Artistni yozing"
+          name="name"
+          required
+        />
+        <div class="invalid-feedback">Artist yozilmagan</div>
+        <div class="valid-feedback">Yaxshi</div>
+      </div>
 
-        <hr style="color: red; height: 2px;">
-<!-- Xizmatning sarlavhasi model title -->
-        <div class="mb-3">
-            <label class="form-label" for="validationCustom01">Xizmatning sarlavhasi Uzbek tilida 10 ta yoki 15 so'z yozing</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Xizmatning Sarlavhasini yozing uzbek tilida" name="titleuz" required>
-            <div class="invalid-feedback">
-                Xizmatning Sarlavhasi yozilmagan
-            </div>
-            <div class="valid-feedback">
-               Yaxshi
-            </div>
-        </div>
+    <!-- Loyihaning rasmi model file -->
+    <div class="mb-3">
+      <label class="form-label" for="validationCustom01">Audioni yuklash</label>
+      <input
+        type="file"
+        class="form-control"
+        id="validationCustom01"
+        name="audio"
+        multiple
+        required
+      />
+      <div class="invalid-feedback">Audio tanlanmagan</div>
+      <div class="valid-feedback">Audio tanlandi</div>
+    </div>
 
-        <div class="mb-3">
-            <label class="form-label" for="validationCustom01">Xizmatning sarlavhasi Rus tilida 10 ta yoki 15 so'z yozing</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="Xizmatning Sarlavhasini yozing rus tilida" name="titleru" required>
-            <div class="invalid-feedback">
-                Xizmatning Sarlavhasi yozilmagan
-            </div>
-            <div class="valid-feedback">
-               Yaxshi
-            </div>
-        </div>
-
-
-        <hr style="color: red; height: 2px;">
-<!-- Xizmatning rasmi model file -->
-        <div class="mb-3">
-            <label class="form-label" for="validationCustom01">Xizmatning rasmi</label>
-            <input type="file" class="form-control" id="validationCustom01" placeholder="Xizmatning rasmini tanlang" name="image" required>
-            <div class="invalid-feedback">
-                Xizmatning rasmi tanlanmagan
-            </div>
-            <div class="valid-feedback">
-               Rasm tanlandi
-            </div>
-        </div>
-        <hr style="color: red; height: 2px;">
-<!-- Xizmat haqida  model description -->
-        <div class="mb-3">
-            <label class="form-label"  >Xizmat haqida Uzbek tilida</label>
-            <textarea class="form-control "  rows="5" 
-                placeholder="Xizmat haqida yozing Uzbek tilida" name="descriptionuz" ></textarea>
-            
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Xizmat haqida Rus tilida</label>
-            <textarea class="form-control "  rows="5" 
-                placeholder="Xizmat haqida yozing rus tilida" name="descriptionru" ></textarea>
-            
-        </div>
-
-        
-        
-        <button class="btn btn-primary" type="submit">Yuklash</button>
-    </form>
-</div> 
+    <button class="btn btn-primary" type="submit">Yuklash</button>
+  </form>
+</div>

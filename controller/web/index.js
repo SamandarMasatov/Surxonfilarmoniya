@@ -1,31 +1,32 @@
 const Projects = require("../../models/projects");
 const Abouts = require("../../models/about");
-const Services = require("../../models/services");
+const Audios = require("../../models/audios");
 const News = require("../../models/news");
 const Team = require("../../models/team");
 const TeamAbout = require("../../models/teamAbout");
 const Articles = require("../../models/article");
+const Home = require("../../models/home");
 
 exports.index = async (req, res) => {
   const projects = await Projects.find().sort({ date: -1 });
-  const services = await Services.find().sort({ date: -1 });
-  const news = await News.find().sort({ date: -1 });
-  const teams = await Team.find().sort({ date: -1 });
+  const audios = await Audios.find().sort({ createdAt: -1 });
+  const news = await News.find().sort({ createdAt: -1 });
+  const teams = await Team.find();
   const teamAbout = await TeamAbout.find();
-  const articles = await Articles.find().sort({ date: -1 });
+  const articles = await Articles.find().sort({ createdAt: -1 });
   const abouts = await Abouts.find();
+  const home = await Home.find().sort({ createdAt: -1 });
   res.render("./web/index", {
-    title:
-      "Очистные сооружения | Канализация | Строительство | Stroy Montaj Invest",
+    title: "Surxondaryo viloyat davlat Filarmoniyasi",
     layout: "./web_layout",
-    lang: req.session.ulang,
     projects,
     abouts,
-    services,
+    audios,
     news,
     teams,
     articles,
     teamAbout,
+    home,
   });
 };
 

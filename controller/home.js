@@ -1,19 +1,17 @@
-const Article = require("../models/article");
+const Article = require("../models/home");
 const path = require("path");
 const fs = require("fs");
 
 exports.create = async (req, res) => {
   const result = new Article({
-    title: req.body.title,
-    image: `${req.file.filename}`,
-    video: req.body.video,
-    description: req.body.description,
+    name: req.body.name,
+    audio: `${req.file.filename}`,
   });
 
   await result
     .save()
     .then(() => {
-      res.redirect("/admin/articles");
+      res.redirect("/admin/projects");
       // res.status(200).json({ success: true, data: data });
     })
     .catch((error) => {
@@ -23,8 +21,8 @@ exports.create = async (req, res) => {
 
 exports.getOne = async (req, res, next) => {
   const result = await Article.findById({ _id: req.params.id });
-  res.render("./admin/article_upt", {
-    title: "Maqolarni tahrirlash",
+  res.render("./admin/projects_upt", {
+    title: "Bosh sahifadagi qo'shiqni tahrirlash",
     layout: "./admin_layout",
     result,
   });
@@ -43,7 +41,7 @@ exports.UpdateOne = async (req, res, next) => {
       } else {
         const filePath = path.join(
           __dirname,
-          "../public/uploads/articles/" + data.image
+          "../public/uploads/home/" + data.image
         );
         fs.unlink(filePath, async (err) => {
           if (err) throw err;
@@ -52,11 +50,11 @@ exports.UpdateOne = async (req, res, next) => {
     }
   );
   const result = await Article.findByIdAndUpdate({ _id: req.params.id });
-  result.image = `${req.file.filename}`;
+  result.audio = `${req.file.filename}`;
   await result
     .save()
     .then(() => {
-      res.redirect("/admin/articles");
+      res.redirect("/admin/projects");
     })
     .catch((error) => {
       res.status(400).json({ success: false, data: error });
@@ -66,13 +64,11 @@ exports.UpdateOne = async (req, res, next) => {
 exports.updateInfo = async (req, res, next) => {
   const result = await Article.findByIdAndUpdate({ _id: req.params.id });
 
-  result.title = req.body.title;
-  result.video = req.body.video;
-  result.description = req.body.description;
+  result.name = req.body.name;
   await result
     .save()
     .then(() => {
-      res.redirect("/admin/articles");
+      res.redirect("/admin/projects");
     })
     .catch((error) => {
       res.status(400).json({ success: false, data: error });
@@ -86,12 +82,12 @@ exports.deleteOne = async (req, res, next) => {
     } else {
       const filePath = path.join(
         __dirname,
-        "../public/uploads/articles/" + data.image
+        "../public/uploads/home/" + data.audio
       );
       fs.unlink(filePath, async (err) => {
         if (err) throw err;
         await Article.findByIdAndDelete({ _id: req.params.id });
-        res.redirect("/admin/articles");
+        res.redirect("/admin/projects");
       });
     }
   });

@@ -10,33 +10,29 @@
     <!-- Maqolaning turi model name -->
     <div class="mb-3">
       <label class="form-label" for="validationCustom01"
-        >Maqolaning sarlavhasi Uzbek</label
+        >Maqolaning sarlavhasi</label
       >
       <input
         type="text"
         class="form-control"
         id="validationCustom01"
-        placeholder="Maqolaning nomini yozing Uzbek tilida"
-        name="nameuz"
+        placeholder="Maqolaning sarlavhasi"
+        name="title"
         required
       />
       <div class="invalid-feedback">Maqolaning nomi yozilmagan</div>
       <div class="valid-feedback">Yaxshi</div>
     </div>
     <div class="mb-3">
-      <label class="form-label" for="validationCustom01"
-        >Maqolaning sarlavhasi Rus</label
+      <label class="form-label"
+        >Video linkini joylang video joylash niyatingiz bo'lmasa shartmas</label
       >
-      <input
-        type="text"
+      <textarea
+        name="video"
         class="form-control"
-        id="validationCustom01"
-        placeholder="Maqolaning nomini yozing Rus tilida"
-        name="nameru"
-        required
-      />
-      <div class="invalid-feedback">Maqolaning turi yozilmagan</div>
-      <div class="valid-feedback">Yaxshi</div>
+        rows="7"
+        placeholder="Video linkini tahrirlash"
+      ></textarea>
     </div>
     <hr style="color: red; height: 2px" />
     <!-- Maqolaning rasmi model file -->
@@ -56,70 +52,22 @@
       <div class="valid-feedback">Rasm tanlandi</div>
     </div>
     <hr style="color: red; height: 2px" />
-    <!-- Maqoladagi rasmni joyini o'zgartirish -->
-    <div class="mb-3">
-      <label class="form-label"
-        >Maqolaning rasmini chapga yoki o'ngga joylashtirish</label
-      >
-      <select
-        name="change"
-        class="form-select"
-        aria-label="Default select example"
-      >
-        <option value="chap" selected>Chap tomon</option>
-        <option value="flex-row-reverse">O'ng tomon</option>
-      </select>
-    </div>
-    <hr style="color: red; height: 2px" />
-    <!-- Maqolaning sarlavhasi model title -->
     <!-- Maqola haqida  model description -->
-    <div class="mb-3">
-      <label class="form-label"
-        >Maqola haqida Uzbek tilida Rasmni yonidan chiqadi</label
-      >
-      <textarea
-        name="titleuz"
-        class="form-control"
-        rows="7"
-        placeholder="Maqola haqida yozing Uzbek tilida"
-      ></textarea>
-    </div>
-    <div class="mb-3">
-      <label class="form-label"
-        >Maqola haqida Rus tilida Rasmni yonidan chiqadi</label
-      >
-      <textarea
-        name="titleru"
-        class="form-control"
-        rows="7"
-        placeholder="Maqola haqida yozing rus tilida"
-      ></textarea>
-    </div>
-    <hr style="color: red; height: 2px" />
-    <!-- Maqola haqida  model description -->
-    <div class="mb-3">
-      <label class="form-label"
-        >Maqola haqida Uzbek tilida Ko'proq matn yoziladigan joy</label
-      >
-      <textarea
-        name="descriptionuz"
-        class="form-control"
-        rows="12"
-        placeholder="Maqola haqida yozing Uzbek tilida"
-      ></textarea>
-    </div>
-    <div class="mb-3">
-      <label class="form-label"
-        >Maqola haqida Rus tilida Ko'proq matn yoziladigan joy</label
-      >
-      <textarea
-        name="descriptionru"
-        class="form-control"
-        rows="12"
-        placeholder="Maqola haqida yozing rus tilida"
-      ></textarea>
+
+    <div class="entry">
+      <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
+      <div class="body">
+        <textarea id="editor1" name="description"></textarea>
+        <script>
+          CKEDITOR.replace("editor1");
+        </script>
+      </div>
     </div>
 
     <button class="btn btn-primary" type="submit">Yuklash</button>
   </form>
 </div>
+
+
+
+

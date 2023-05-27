@@ -10,108 +10,50 @@
     <!-- Maqolaning turi model name -->
     <div class="mb-3">
       <label class="form-label" for="validationCustom01"
-        >Maqolaning sarlavhasi Uzbek</label
+        >Maqolaning sarlavhasini tahrirlash</label
       >
       <input
         type="text"
         class="form-control"
         id="validationCustom01"
-        placeholder="Maqolaning nomini yozing Uzbek tilida"
-        name="nameuz"
-        value="<%= result.name.uz %>"
+        placeholder="Maqolaning sarlavhasini tahrirlash"
+        name="title"
+        value="<%= result.title %>"
         required
       />
-      <div class="invalid-feedback">Maqolaning nomi yozilmagan</div>
+      <div class="invalid-feedback">Maqolaning sarlavhasi yozilmagan</div>
       <div class="valid-feedback">Yaxshi</div>
     </div>
+    <hr style="color: red; height: 2px" />
 
-    <div class="mb-3">
-      <label class="form-label" for="validationCustom01"
-        >Maqolaning sarlavhasi Rus</label
-      >
-      <input
-        type="text"
-        class="form-control"
-        id="validationCustom01"
-        placeholder="Maqolaning nomini yozing Rus tilida"
-        name="nameru"
-        value="<%= result.name.ru %>"
-        required
-      />
-      <div class="invalid-feedback">Maqolaning turi yozilmagan</div>
-      <div class="valid-feedback">Yaxshi</div>
-    </div>
-    <hr style="color: red; height: 2px" />
-    <!-- Maqoladagi rasmni joyini o'zgartirish -->
-    <div class="mb-3">
-      <label class="form-label"
-        >Maqolaning rasmini chapga yoki o'ngga joylashtirish</label
-      >
-      <select
-        name="change"
-        class="form-select"
-        aria-label="Default select example"
-      >
-        <option value="chap" selected>Chap tomon</option>
-        <option value="flex-row-reverse">O'ng tomon</option>
-      </select>
-    </div>
-    <hr style="color: red; height: 2px" />
     <!-- Maqola haqida  model description -->
     <div class="mb-3">
-      <label class="form-label"
-        >Maqola haqida Uzbek tilida Rasmni yonidan chiqadi</label
-      >
+      <label class="form-label">Video linkini tahrirlash</label>
       <textarea
-        name="titleuz"
+        name="video"
         class="form-control"
         rows="7"
-        placeholder="Maqola haqida yozing Uzbek tilida"
+        placeholder="Video linkini tahrirlash"
       >
-<%= result.title.uz %></textarea
-      >
-    </div>
-    <div class="mb-3">
-      <label class="form-label"
-        >Maqola haqida Rus tilida Rasmni yonidan chiqadi</label
-      >
-      <textarea
-        name="titleru"
-        class="form-control"
-        rows="7"
-        placeholder="Maqola haqida yozing rus tilida"
-      >
-<%= result.title.ru %></textarea
+<%= result.video %></textarea
       >
     </div>
 
     <hr style="color: red; height: 2px" />
-    <!-- Xizmat haqida  model description -->
 
-    <div class="mb-3">
-      <label class="form-label">Xizmat haqida Uzbek tilida tahrirlash</label>
-      <textarea
-        class="form-control"
-        rows="12"
-        placeholder="Xizmat haqida yozing Uzbek tilida"
-        name="descriptionuz"
-      >
-<%= result.description.uz %></textarea
-      >
-    </div>
-    <div class="mb-3">
-      <label class="form-label">Xizmat haqida Rus tilida tahrirlash</label>
-      <textarea
-        class="form-control"
-        rows="12"
-        placeholder="Xizmat haqida yozing rus tilida"
-        name="descriptionru"
-      >
-<%= result.description.ru %></textarea
-      >
+    <div class="entry">
+      <script src="https://cdn.ckeditor.com/4.9.1/standard/ckeditor.js"></script>
+      <div class="body">
+        <textarea id="editor1" name="description">
+<%- result.description %></textarea
+        >
+        <script>
+          CKEDITOR.replace("editor1");
+        </script>
+      </div>
     </div>
 
-    <button class="btn btn-primary" type="submit">Saqlash</button>
+    <button class="btn btn-primary mt-2" type="submit">Saqlash</button>
   </form>
   <!-- Bitta rasmni tahrirlash -->
   <form
@@ -128,7 +70,7 @@
       <img
         width="150px"
         class="col"
-        src="/uploads/articles/<%=result.image%>"
+        src="/uploads/articles/<%= result.image %>"
       />
     </div>
     <input class="form-control" name="image" type="file" multiple /> <br />
